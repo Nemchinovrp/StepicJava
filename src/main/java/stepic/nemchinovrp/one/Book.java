@@ -1,7 +1,6 @@
 package stepic.nemchinovrp.one;
 
 import java.util.Collection;
-import java.util.List;
 
 public class Book {
     private String name;
