@@ -1,5 +1,7 @@
 package stepic.nemchinovrp.two;
 
+import java.util.Objects;
+
 public class Account {
     private String number;
     private Long balance;
@@ -36,6 +38,21 @@ public class Account {
 
     public void setLocked(boolean locked) {
         isLocked = locked;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return isLocked == account.isLocked &&
+                Objects.equals(number, account.number) &&
+                Objects.equals(balance, account.balance);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number, balance, isLocked);
     }
 
     @Override
